@@ -5,6 +5,7 @@ const path = require('path');
 router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'));
 });
+
 // exercise.html is rendered at endpoint /exercise
 router.get('/exercise', (req, res) => {
 

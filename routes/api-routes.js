@@ -1,6 +1,22 @@
 const router = require("express").Router();
 const Transaction = require("../models/Workout.js");
+const db = require('../models');
 const path = require('path');
+
+// get workouts
+router.get('/api/workouts', (req, res) => {
+  db.Workout.find({})
+    .then(workoutDB => {
+      res.json(workoutDB)
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json(err)
+    });
+})
+
+
+
 
 // router.post("/api/transaction", ({ body }, res) => {
 //   Transaction.create(body)
